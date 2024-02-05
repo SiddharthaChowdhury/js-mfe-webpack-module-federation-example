@@ -10,12 +10,9 @@ module.exports = {
 		new ModuleFederationPlugin({
 			name: "container",
 			remotes: {
-				products: "products@http://localhost:8081/remoteEntry.js",
+				"mfe@products":
+					"name_mfe_products@http://localhost:8081/remoteEntry.js",
 			},
-			// filename: "remoteEntry.js",
-			// exposes: {
-			// 	"./ProductIndex": "./src/index",
-			// },
 		}),
 		new HtmlWebpackPlugin({
 			template: "./public/index.html",

@@ -8,9 +8,11 @@ module.exports = {
 	},
 	plugins: [
 		new ModuleFederationPlugin({
-			name: "products",
+			// This "name" and "filename" will be used in container's webpack file's ModuleFederationPlugin.remotes[key]: <THIS_name>@this_address_with_port/<THIS_filename>
+			name: "name_mfe_products",
 			filename: "remoteEntry.js",
 			exposes: {
+				// "./ProductsIndex" is an alias
 				"./ProductsIndex": "./src/index",
 			},
 		}),
